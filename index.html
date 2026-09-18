@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NeuroPath is a textbook style neuroscience learning path for curious future neurosurgeons.">
+  <title>NeuroPath | Brain Science Textbook</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="NeuroPath home"><span class="brand-icon">🧠</span><span>NeuroPath</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#curriculum">Curriculum</a>
+        <a href="#lab">Lab</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#resources">Resources</a>
+      </nav>
+      <div class="top-stats">
+        <div class="stat-chip"><span id="xpText">0 XP</span></div>
+        <div class="progress-pill"><span id="progressText">0%</span> complete</div>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow">NEUROPATH ACADEMY · CORE CURRICULUM</div>
+          <h1>Build the foundation for a future in neurosurgery.</h1>
+          <p class="hero-sub">A structured, chapter based neuroscience curriculum designed to build strong foundations in biology, anatomy, physiology, neurology, and neurosurgery.</p>
+          <div class="hero-actions">
+            <button class="button primary" id="continueBtn">Continue learning</button>
+            <a class="button secondary" href="#curriculum">Open textbook</a>
+          </div>
+          <div class="hero-note">Study the chapter, complete the checkpoint, and progress through the curriculum one course at a time.</div>
+        </div>
+
+        <aside class="study-dashboard" aria-label="Study dashboard">
+          <div class="dash-ring"><div><strong id="stageProgress">0 / 25</strong><span>courses</span></div></div>
+          <div class="dashboard-lines">
+            <div><span>Current course</span><strong id="currentStageName">Foundations</strong></div>
+            <div><span>Quiz best</span><strong id="quizBestText">0%</strong></div>
+            <div><span>Badges</span><strong id="badgeText">0</strong></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-shell quick-grid">
+        <article class="quick-card featured">
+          <div class="eyebrow">YOUR NEXT ASSIGNMENT</div>
+          <h2 id="nextLessonTitle">Course 01: Biology for Neuroscience</h2>
+          <p id="nextLessonBlurb">Start with how scientists think about the nervous system, cells, and signals.</p>
+          <button class="button primary" id="openNextBtn">Open chapter</button>
+        </article>
+        <article class="quick-card">
+          <div class="eyebrow">STUDY METHOD</div>
+          <div class="method-list">
+            <div><span class="method-num">01</span><span><strong>Read</strong><small>Learn the idea slowly.</small></span></div>
+            <div><span class="method-num">02</span><span><strong>Recall</strong><small>Explain it without looking.</small></span></div>
+            <div><span class="method-num">03</span><span><strong>Quiz</strong><small>Prove you understood it.</small></span></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="curriculum" class="section-shell section-block">
+        <div class="section-heading">
+          <div><div class="eyebrow">ACADEMIC CURRICULUM</div><h2>Your 25 course neuroscience journey</h2></div>
+          <span class="muted">Each course builds on the knowledge from the previous one.</span>
+        </div>
+        <div id="curriculumList" class="curriculum-list"></div>
+      </section>
+
+      <section id="lab" class="section-shell section-block">
+        <div class="section-heading">
+          <div><div class="eyebrow">LAB</div><h2>Action potential explorer</h2></div>
+          <span class="muted">An interactive review from the neuron course.</span>
+        </div>
+        <div class="lab-grid">
+          <div class="chart-card">
+            <div class="chart-header"><span>Membrane voltage</span><strong id="voltageLabel">−70 mV</strong></div>
+            <div class="voltage-chart">
+              <div class="grid-line y1"></div><div class="grid-line y2"></div><div class="grid-line y3"></div><div class="grid-line y4"></div>
+              <svg viewBox="0 0 700 270" role="img" aria-label="Simplified action potential curve">
+                <polyline id="curve" points="10,215 90,215 145,205 205,55 275,55 340,220 395,250 470,215 690,215" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                <line x1="0" x2="700" y1="155" y2="155" stroke="currentColor" stroke-opacity="0.18" stroke-width="2"></line>
+              </svg>
+              <div class="axis-label axis-top">+30</div><div class="axis-label axis-bottom">−90</div>
+            </div>
+            <input id="potentialSlider" type="range" min="0" max="6" value="0" aria-label="Action potential stage">
+            <div class="stage-buttons" id="stageButtons"></div>
+          </div>
+          <aside class="explainer-card">
+            <div class="eyebrow">CURRENT STAGE</div>
+            <h3 id="stageTitle">Resting potential</h3>
+            <p id="stageDescription">The neuron is at rest and maintains ion gradients across its membrane.</p>
+            <div class="ion-box" id="ionBox">Think: stable gradients + selective permeability</div>
+            <div class="question-box"><strong>Teach it back</strong><span id="teachPrompt">Why is the membrane voltage not zero at rest?</span></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="roadmap" class="section-shell section-block">
+        <div class="section-heading">
+          <div><div class="eyebrow">LONG TERM ROADMAP</div><h2>From student to neurosurgeon</h2></div>
+          <span class="muted">A U.S. oriented overview. Your exact path will depend on your future choices.</span>
+        </div>
+        <div class="roadmap">
+          <article class="road-step"><div class="step-dot">1</div><div><h3>Now</h3><p>Build science, math, reading, writing, and study habits. Explore anatomy and neuroscience at a fun, age appropriate level.</p></div></article>
+          <article class="road-step"><div class="step-dot">2</div><div><h3>Middle & high school</h3><p>Keep building biology, chemistry, physics, mathematics, communication, and research skills.</p></div></article>
+          <article class="road-step"><div class="step-dot">3</div><div><h3>College</h3><p>Complete an undergraduate education and prepare for medical school with science, communication, and service experiences.</p></div></article>
+          <article class="road-step"><div class="step-dot">4</div><div><h3>Medical school</h3><p>Study anatomy, physiology, pathology, pharmacology, clinical skills, and the rest of medicine.</p></div></article>
+          <article class="road-step"><div class="step-dot">5</div><div><h3>Neurosurgery residency</h3><p>Neurosurgical residency in the U.S. is typically seven years, followed by continued specialization and learning for many surgeons.</p></div></article>
+          <article class="road-step"><div class="step-dot">6</div><div><h3>Career long learning</h3><p>Neurosurgeons continue training, studying research, reviewing cases, and learning new techniques throughout their careers.</p></div></article>
+        </div>
+      </section>
+
+      <section id="resources" class="section-shell section-block">
+        <div class="section-heading"><div><div class="eyebrow">RESOURCES</div><h2>Trusted places to learn more</h2></div></div>
+        <div class="resource-grid">
+          <a class="resource-card" href="https://www.ninds.nih.gov/health-information/public-education/brain-basics" target="_blank" rel="noopener noreferrer"><span>🏛️</span><div><h3>NINDS Brain Basics</h3><p>National Institute of Neurological Disorders and Stroke educational material.</p></div></a>
+          <a class="resource-card" href="https://openstax.org/books/anatomy-and-physiology-2e/pages/12-2-nervous-tissue" target="_blank" rel="noopener noreferrer"><span>📘</span><div><h3>OpenStax Anatomy & Physiology</h3><p>Free textbook content for nervous tissue and neurons.</p></div></a>
+          <a class="resource-card" href="https://openstax.org/books/anatomy-and-physiology/pages/12-4-the-action-potential" target="_blank" rel="noopener noreferrer"><span>⚡</span><div><h3>OpenStax Action Potential</h3><p>Deeper reading about membrane voltage and ion movements.</p></div></a>
+          <a class="resource-card" href="https://students-residents.aamc.org/" target="_blank" rel="noopener noreferrer"><span>🎓</span><div><h3>AAMC</h3><p>Official student resources about exploring medicine and medical education.</p></div></a>
+          <a class="resource-card" href="https://www.aans.org/residents-students/medical-students/residency-directory/" target="_blank" rel="noopener noreferrer"><span>🩺</span><div><h3>AANS Residency Directory</h3><p>American Association of Neurological Surgeons residency resources.</p></div></a>
+        </div>
+      </section>
+
+      <section class="section-shell section-block glossary-section">
+        <div class="section-heading"><div><div class="eyebrow">GLOSSARY</div><h2>Words worth knowing</h2></div><input id="glossarySearch" class="search-box" placeholder="Search a term..." aria-label="Search glossary"></div>
+        <div id="glossary" class="glossary-grid"></div>
+      </section>
+
+      <section class="section-shell section-block final-section">
+        <div class="final-card">
+          <div><div class="eyebrow">KEEP GOING</div><h2>Small lessons become big knowledge.</h2><p>Read carefully, draw what you learn, teach it back, and let repetition do its thing.</p></div>
+          <button class="button danger" id="resetProgress">Reset progress</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer section-shell"><span>🧠 NeuroPath</span><span>Educational study tool; not medical advice.</span></footer>
+  </div>
+
+  <dialog id="courseDialog" class="course-dialog" aria-labelledby="courseDialogTitle" aria-describedby="readerSectionCount">
+    <div class="dialog-frame">
+      <header class="dialog-top">
+        <div>
+          <div class="eyebrow" id="courseKicker">STAGE 01</div>
+          <h2 id="courseDialogTitle">Foundations of Neuroscience</h2>
+        </div>
+        <button class="icon-button" id="closeDialog" aria-label="Exit lesson">×</button>
+      </header>
+      <div class="dialog-progress"><div id="chapterProgressBar"></div></div>
+      <div class="course-layout">
+        <aside class="course-toc">
+          <div class="toc-title">Chapter contents</div>
+          <div id="chapterNav"></div>
+          <div class="toc-tip">💡 Read each section, then use the checkpoint when it appears.</div>
+        </aside>
+        <article class="course-reader">
+          <div class="reader-meta"><span id="readerType">TEXTBOOK CHAPTER</span><span id="readerSectionCount">Section 1</span></div>
+          <h3 id="readerTitle">Welcome</h3>
+          <div id="readerContent" class="reader-content"></div>
+          <div id="readerCallout" class="reader-callout hidden"></div>
+          <div id="readerTerms" class="reader-terms"></div>
+          <div id="readerQuiz" class="reader-quiz hidden"></div>
+          <div class="reader-actions">
+            <button class="button secondary" id="prevSection">Previous</button>
+            <button class="button primary" id="nextSection">Next section</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
